@@ -12,7 +12,7 @@ div.desc {
     text-align: center;
   }
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #a34caf; 
     border: none;
     color: white;
     padding: 15px 15px;
@@ -25,8 +25,9 @@ button {
 button:hover {
     background-color: #333;
 }
-h1 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    
+.header {
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+  background: #f1f1f1;
 }
