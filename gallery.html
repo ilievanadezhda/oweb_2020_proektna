@@ -2,10 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Галерија</title>
+        <title>Галерија</title> 
         <link rel="stylesheet" type="text/css" href="galery_styles.css">
         <link rel="stylesheet" type="text/css" href="home_styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            var identifikacija;
+            var likes = [0, 0, 0, 0, 0, 0, 0, 0];
+            function countLikes(clicked_id) {
+                likes[clicked_id-1]++;
+                identifikacija = "r"+clicked_id;
+                document.getElementById(identifikacija).innerHTML = likes[clicked_id-1];
+            }
+            var komentar;
+            var komentari = [0, 0, 0, 0, 0, 0, 0, 0];
+            function addComment(clicked_id) {
+                komentar = window.prompt("Напишете го вашиот коментар тука");
+                identifikacija="f"+(clicked_id-100);
+                document.getElementById(identifikacija).innerHTML += komentar + "<br>";
+                identifikacija="s"+(clicked_id-100);
+                komentari[clicked_id-101]++;                
+                document.getElementById(identifikacija).innerHTML = komentari[clicked_id-101];
+            }
+        </script>
     </head>
     <body>
         <ul>
@@ -27,11 +46,12 @@
             <a target="_blank" href="img/pchela.jpg"> 
               <img src="img/pchela.jpg" alt="Bee">
             </a>
-            <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+            <div class="desc">  
+                <button id = "1" onclick="countLikes(this.id)"><div id="r1" style="display: inline-block;">0</div> <i class="fa fa-heart"></i> </button>
+                <button id = "101" onclick="addComment(this.id)" type="button"><div id="s1" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
-            </div>
+                <p id="f1"></p>
+            </div>            
           </div>
 
           <div class="gallery">
@@ -39,9 +59,10 @@
               <img src="img/shtipki.jpg" alt="Bee">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "2" onclick="countLikes(this.id)"><div id="r2" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "102" onclick="addComment(this.id)" type="button"><div id="s2" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f2"></p>
             </div>
           </div>
 
@@ -50,9 +71,10 @@
               <img src="img/slovenija2.jpg" alt="Slovenija" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "3" onclick="countLikes(this.id)"><div id="r3" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "103" onclick="addComment(this.id)" type="button"><div id="s3" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f3"></p>
             </div>
           </div>
           
@@ -61,9 +83,10 @@
               <img src="img/svekji01.jpg" alt="Northern Lights" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "4" onclick="countLikes(this.id)"><div id="r4" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "104" onclick="addComment(this.id)" type="button"><div id="s4" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f4"></p>
             </div>
           </div>
           <div class="gallery">
@@ -71,9 +94,10 @@
               <img src="img/skopje1.jpg" alt="Northern Lights" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "5" onclick="countLikes(this.id)"><div id="r5" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "105" onclick="addComment(this.id)" type="button"><div id="s5" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f5"></p>
             </div>
           </div>
 
@@ -82,9 +106,10 @@
               <img src="img/skopje3.jpg" alt="Northern Lights" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "6" onclick="countLikes(this.id)"><div id="r6" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "106" onclick="addComment(this.id)" type="button"><div id="s6" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f6"></p>
             </div>
           </div>
 
@@ -93,19 +118,22 @@
               <img src="img/matematika.jpg" alt="Northern Lights" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "7" onclick="countLikes(this.id)"><div id="r7" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "107" onclick="addComment(this.id)" type="button"><div id="s7" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f7"></p>
             </div>
           </div>
+          
           <div class="gallery">
             <a target="_blank" href="img/bandera_bw.jpg">
               <img src="img/bandera_bw.jpg" alt="Northern Lights" width="600" height="400">
             </a>
             <div class="desc">
-                <button><i class="fa fa-heart"></i></button>
-                <button><i class="fa fa-comment"></i></button>
+                <button id = "8" onclick="countLikes(this.id)"><div id="r8" style="display: inline-block;">0</div> <i class="fa fa-heart"></i></button>
+                <button id = "108" onclick="addComment(this.id)" type="button"><div id="s8" style="display: inline-block;">0</div> <i class="fa fa-comment"></i></button>
                 <button><i class="fa fa-share-alt"></i></button>
+                <p id="f8"></p>
             </div>
           </div>      
     </body>
