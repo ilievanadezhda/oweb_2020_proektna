@@ -6,6 +6,14 @@
         <link rel="stylesheet" type="text/css" href="blog_styles.css">
         <link rel="stylesheet" type="text/css" href="home_styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript">
+            function postiraj() {
+                var naslov = document.getElementById("myTitle").value;
+                var tekst = document.getElementById("myText").value;
+                var komanda = '<div class="card"> <h2>'+naslov+'</h2> <p>'+tekst+'</p> </div>';
+                document.getElementById("postirano").innerHTML += komanda;
+            }
+        </script>
     </head>
     <body>
         <ul>
@@ -23,6 +31,17 @@
             <h2>Мој блог</h2>
         </div>
         <section>
+                <div class="card">
+                    <h2>Сега и Вие може да додавате содржини на мојот блог! Напиши нешто: </h2>
+                    <form>
+                        <p>
+                            <textarea id="myTitle" style="width: 100%; height: 42px">Мојот наслов</textarea>
+                        </p>
+                        <textarea id="myText">Ова е мојот прв пост на страницата на Надежда! </textarea>
+                    </form>
+                    <p style="text-align: center;"><button onclick="postiraj()">Испрати</button></p>
+                </div>
+                <div id="postirano"></div>
                 <div class="card">
                     <h2>The Price for Not Wearing Masks: Perhaps 130,000 Lives</h2>
                     <h5>By Apoorva Mandavilli, Oct 23, 2020</h5>

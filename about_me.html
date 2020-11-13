@@ -6,6 +6,15 @@
         <link rel="stylesheet" type="text/css" href="about_me_styles.css">
         <link rel="stylesheet" type="text/css" href="home_styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript">
+        var sliki = ["500summer.jpg", "gonegirl.jpg", "i_origins.jpg", "inception.jpg", "himym.png", "htgawm.png", "imitation_game.jpg", "blackmirror.png", "teofw.png"]
+        function randomSlika(arg, path) {
+          var num = Math.floor( Math.random() * arg.length );
+          var img = arg[ num ];
+          var slika_string = '<img width="200" src="' + path + img + '" alt = "">';
+          document.getElementById("result1").innerHTML = slika_string;
+        }
+        </script>
     </head>
     <body>
         <ul>
@@ -173,5 +182,14 @@
             <img src="img/digital.jpg" alt="E" height="400" width="600">
             <div class="desc">Digital Fortress </div>
           </div>          
+    </section>
+    <h1>Моја верзија на I'm feeling lucky</h1>
+    <section>
+      <p style="text-align: center;">Кликнете на копчето и ќе ви се прикаже содржина по случаен избор. </p>
+      <button id = "button1" onclick="randomSlika(sliki, 'img/')"> Кликни ме</button>
+      <p>
+      <div id = "result1" ><img width="400" src="img/misterija.png" alt="mystery" style="border-radius: 50px;"></div>  
+      </p>
+      
     </section>
 </html>
