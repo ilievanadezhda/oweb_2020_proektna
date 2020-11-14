@@ -10,8 +10,11 @@
             function postiraj() {
                 var naslov = document.getElementById("myTitle").value;
                 var tekst = document.getElementById("myText").value;
-                var komanda = '<div class="card"> <h2>'+naslov+'</h2> <p>'+tekst+'</p> </div>';
-                document.getElementById("postirano").innerHTML += komanda;
+                var d = new Date()
+                d.getDate();
+                var komanda = '<div class="card"> <h2>'+naslov+'</h2> <h5>'+d+'</h5> <p>'+tekst+'</p> </div>';
+                var momentalno = document.getElementById("postirano").innerHTML;
+                document.getElementById("postirano").innerHTML = komanda + momentalno;
             }
         </script>
     </head>

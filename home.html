@@ -5,6 +5,29 @@
         <title>Дома</title>
         <link rel="stylesheet" type="text/css" href="home_styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type = "text/javascript">
+            var i = 0;
+            var txt = 'Добредојдовте на мојата WEB страна';
+            var speed = 150; 
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("tuka").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } 
+            }
+            var sliki = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"]
+            var k = 0;
+            function slideshow() {
+                if(k<5) {
+                    var slika_string = "url(me/" + sliki[k] + ")";
+                    document.getElementById("tuka1").style.backgroundImage = slika_string;
+                    if (k == 4) {k = 0;}
+                    else {k++;}
+                    setTimeout(slideshow, 3000);
+                }
+            }
+        </script>
     </head>
     <body>
         <ul>
@@ -18,10 +41,10 @@
             <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
             <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
         </ul>
-        <div class="Naslovna">
+        <div class ="Naslovna" id= "tuka1"><script>slideshow()</script>
             <div class="Tekst_na_naslovna">
                 <h1>Јас сум Надежда Илиева</h1>
-                <p></p>
+                <p id="tuka"><script>typeWriter();</script></p>
                 <a target="_blank" href="CV.pdf" download="CV">
                     <button class="buttonh">
                         Превземи CV
@@ -29,5 +52,6 @@
                 </a>
             </div>
         </div>
+ 
     </body>
 </html>

@@ -30,7 +30,7 @@ body, html {
 }
 .Naslovna {
     background-image: url(img/cover1.jpg);
-    height: 100%;
+    height: 90%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
