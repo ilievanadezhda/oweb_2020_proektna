@@ -14,9 +14,11 @@ button {
     color: white;
     display: inline-block;
     border-radius: 2pc;
+    transition: transform 2s;
 }
 button:hover {
     background-color:#a34caf;
+    transform: rotateY(360deg);
 }
 section {
     margin-left:100px;

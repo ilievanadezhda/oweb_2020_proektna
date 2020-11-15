@@ -14,6 +14,16 @@
           var slika_string = '<img width="200" src="' + path + img + '" alt = "">';
           document.getElementById("result1").innerHTML = slika_string;
         }
+        var i = 0;
+        var txt = 'За мене';
+        var speed = 150; 
+        function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("tuka").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } 
+            }
         </script>
     </head>
     <body>
@@ -30,7 +40,7 @@
         </ul>
     </body>
     <div class="header">
-      <h2>За мене</h2>  
+      <h2 id="tuka"><script>typeWriter();</script></h2>  
     </div> 
     <section id="1">
         <p>
@@ -190,6 +200,5 @@
       <p>
       <div id = "result1" ><img width="400" src="img/misterija.png" alt="mystery" style="border-radius: 50px;"></div>  
       </p>
-      
     </section>
 </html>

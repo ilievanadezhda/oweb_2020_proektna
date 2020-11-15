@@ -16,6 +16,31 @@
                 var momentalno = document.getElementById("postirano").innerHTML;
                 document.getElementById("postirano").innerHTML = komanda + momentalno;
             }
+            var i = 0;
+            var txt = 'Мој блог';
+            var speed = 150; 
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("tuka").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } 
+            }
+            var countDownDate = new Date("Nov 28, 2020 09:00:00").getTime();
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
         </script>
     </head>
     <body>
@@ -31,7 +56,7 @@
             <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
         </ul>
         <div class="header">
-            <h2>Мој блог</h2>
+            <h2 id="tuka"><script>typeWriter();</script></h2>
         </div>
         <section>
                 <div class="card">
@@ -45,6 +70,11 @@
                     <p style="text-align: center;"><button onclick="postiraj()">Испрати</button></p>
                 </div>
                 <div id="postirano"></div>
+                <div class ="card">
+                    <h2>Време до првиот колоквиум по WEB програмирање</h2>
+                    <div class="fakeimg" id = "counter" style="font-size: 60pt; text-align: center;"> </div>
+                    <p style = "text-align: center;">Yikes, I am in trouble...</p>
+                </div>
                 <div class="card">
                     <h2>The Price for Not Wearing Masks: Perhaps 130,000 Lives</h2>
                     <h5>By Apoorva Mandavilli, Oct 23, 2020</h5>
