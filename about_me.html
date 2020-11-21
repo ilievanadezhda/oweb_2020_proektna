@@ -1,204 +1,210 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>За мене</title>
-        <link rel="stylesheet" type="text/css" href="about_me_styles.css">
-        <link rel="stylesheet" type="text/css" href="home_styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="text/javascript">
-        var sliki = ["500summer.jpg", "gonegirl.jpg","inferno.jpg","clueless.jpg", "i_origins.jpg", "inception.jpg", "himym.png", "htgawm.png", "imitation_game.jpg", "blackmirror.png", "teofw.png"]
+
+<head>
+    <meta charset="utf-8">
+    <title>За мене</title>
+    <link rel="stylesheet" type="text/css" href="about_me_styles.css">
+    <link rel="stylesheet" type="text/css" href="home_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        var sliki = ["500summer.jpg", "gonegirl.jpg", "inferno.jpg", "clueless.jpg", "i_origins.jpg", "inception.jpg", "himym.png", "htgawm.png", "imitation_game.jpg", "blackmirror.png", "teofw.png"]
+
         function randomSlika(arg, path) {
-          var num = Math.floor( Math.random() * arg.length );
-          var img = arg[ num ];
-          var slika_string = '<img width="200" src="' + path + img + '" alt = "">';
-          document.getElementById("result1").innerHTML = slika_string;
+            var num = Math.floor(Math.random() * arg.length);
+            var img = arg[num];
+            var slika_string = '<img width="200" src="' + path + img + '" alt = "">';
+            document.getElementById("result1").innerHTML = slika_string;
         }
         var i = 0;
         var txt = 'За мене';
-        var speed = 150; 
-        function typeWriter() {
-                if (i < txt.length) {
-                    document.getElementById("tuka").innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } 
-            }
-        </script>
-    </head>
-    <body>
-        <ul>
-            <li><a href="home.html">Дома</a></li>
-            <li class="active"><a href="about_me.html">За мене</a></li>
-            <li><a href="gallery.html">Галерија</a></li>
-            <li><a href="blog.html">Блог</a></li>
-            <li><a href="visitors.html">Анкета за посетители</a></li>
-            <li><a href="contactform.html">Контакт</a></li>
-            <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a></li>
-            <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
-            <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-    </body>
-    <div class="header">
-      <h2 id="tuka"><script>typeWriter();</script></h2>  
-    </div> 
-    <section id="1">
-        <p>
-            Јас сум Надежда Илиева, студент во трета година на <a href="https://feit.ukim.edu.mk/">Факултетот за електротехника и информациски технологии</a>,
-            на насока Телекомуникации и информациско инженерство. Родена сум во Скопје на 12.01.2000 година, а живеам во Лозово.
-            Основно училиште завршив во ООУ "Методи Митевски Брицо" во Лозово, додека средно во ПСУ "Јахја Кемал" во Скопје.
-            Јас сум поранешен натпреварувач по математика, неколкугодишен член на македонската репрезентација за <a href="https://www.imo-official.org/">Интернационалната</a>, <a href="https://www.egmo.org/">Европската</a> 
-            и <a href="http://www.massee-org.eu/index.php/mathematical/bmo">Балканската</a> математичка олимпијада и медалист. Подолу поделени во категории се дадени моите омилени серии, книги, филмови и музика. 
-        </p>
-    </section>
+        var speed = 150;
 
-    <h1>
-        Омилена музика
-    </h1>
-    <section>
-        <div class="music">
-            <a target="_blank" href="https://open.spotify.com/playlist/2IovlpV3BfzcL31T6cGc2D">
-              <img src="img/mkd.png" alt="A" width="600" height="400">
-            </a>
-            <div class="desc">Duper, Funk Shui and more</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://open.spotify.com/playlist/3zsZ0rmX9TGXR7pPJ7FijN">
-              <img src="img/spotify1.png" alt="B" width="600" height="400">
-            </a>
-            <div class="desc">Tame Impala and more</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1">
-              <img src="img/blurryface.png" alt="C" width="600" height="400">
-            </a>
-            <div class="desc">Twenty One Pilots</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://open.spotify.com/playlist/3FYyzN4YwUxChZ06ilcICK">
-              <img src="img/osc.png" alt="D" width="600" height="400">
-            </a>
-            <div class="desc">80s Greatest Hits</div>
-          </div>
-          <div class="music">
-            <a target="_blank" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0FdJh6">
-              <img src="img/saintmotel.png" alt="E" width="600" height="400">
-            </a>
-            <div class="desc">This is Saint Motel</div>
-          </div>  
-    </section>
-    <h1>
-        Омилени филмови
-    </h1>
-    <section>
-        <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt0112697/?ref_=nv_sr_srsg_0">
-              <img src="img/clueless.jpg" alt="A" width="600" height="400">
-            </a>
-            <div class="desc">Clueless <br> (1995)</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt2084970/?ref_=nv_sr_srsg_0">
-              <img src="img/imitation_game.jpg" alt="B" width="600" height="400">
-            </a>
-            <div class="desc">The Imitation Game (2014)</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt1022603/?ref_=nv_sr_srsg_0">
-              <img src="img/500summer.jpg" alt="C" width="600" height="400">
-            </a>
-            <div class="desc">500 Days of Summer (2009)</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt1375666/?ref_=fn_al_tt_1">
-              <img src="img/inception.jpg" alt="D" width="600" height="400">
-            </a>
-            <div class="desc">Inception (2010)</div>
-          </div>
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt2884206/?ref_=nv_sr_srsg_0">
-              <img src="img/i_origins.jpg" alt="E" width="600" height="400">
-            </a>
-            <div class="desc">I Origins (2014)</div>
-          </div>  
-    </section>   
-    <h1>
-        Омилени серии
-    </h1>
-    <section>
-        <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt2085059/?ref_=tt_mv_close">
-              <img src="img/blackmirror.png" alt="A" width="600" height="400">
-            </a>
-            <div class="desc">Black Mirror <br> (2011 - )</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt0460649/?ref_=nv_sr_srsg_0">
-              <img src="img/himym.png" alt="B" width="600" height="400">
-            </a>
-            <div class="desc">How I Met Your Mother</div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt7335184/?ref_=nv_sr_srsg_1">
-              <img src="img/you.png" alt="C" width="600" height="400">
-            </a>
-            <div class="desc">You <br> (2018 - )
-            </div>
-          </div>
-          
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt3205802/?ref_=nv_sr_srsg_0">
-              <img src="img/htgawm.png" alt="D" width="600" height="400">
-            </a>
-            <div class="desc">How To Get Away With Murder</div>
-          </div>
-          <div class="music">
-            <a target="_blank" href="https://www.imdb.com/title/tt6257970/?ref_=nv_sr_srsg_0">
-              <img src="img/teofw.png" alt="E" height="400" width="600">
-            </a>
-            <div class="desc">The End Of The F***ing World <br> </div>
-          </div>  
-    </section>
-    <h1>Омилени книги</h1>
-    <section>
-        <div class="music">
-            <img src="img/inferno.jpg" alt="A" width="600" height="400">
-            <div class="desc">Inferno <br>..</div>
-          </div>
-          
-          <div class="music">
-            <img src="img/thg.jpg" alt="B" width="600" height="400">
-            <div class="desc">The Hunger Games</div>
-          </div>
-          
-          <div class="music">
-            <img src="img/angels.jpg" alt="C" width="600" height="400">
-            <div class="desc">Angels and Demons </div>
-          </div>
-          
-          <div class="music">
-            <img src="img/gonegirl.jpg" alt="D" width="600" height="400">
-            <div class="desc">Gone <br> Girl</div>
-          </div>
-          <div class="music">
-            <img src="img/digital.jpg" alt="E" height="400" width="600">
-            <div class="desc">Digital Fortress </div>
-          </div>          
-    </section>
-    <h1>Моја верзија на I'm feeling lucky</h1>
-    <section>
-      <p style="text-align: center;">Кликнете на копчето и ќе ви се прикаже содржина по случаен избор. </p>
-      <button id = "button1" onclick="randomSlika(sliki, 'img/')"> Кликни ме</button>
-      <p>
-      <div id = "result1" ><img width="400" src="img/misterija.png" alt="mystery" style="border-radius: 50px;"></div>  
-      </p>
-    </section>
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("tuka").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="home.html">Дома</a></li>
+        <li class="active"><a href="about_me.html">За мене</a></li>
+        <li><a href="gallery.html">Галерија</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="visitors.html">Анкета за посетители</a></li>
+        <li><a href="contactform.html">Контакт</a></li>
+        <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a></li>
+        <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
+        <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+</body>
+<div class="header">
+    <h2 id="tuka"></h2>
+    <script>
+        typeWriter();
+    </script>
+</div>
+<section id="1">
+    <p>
+        Јас сум Надежда Илиева, студент во трета година на <a href="https://feit.ukim.edu.mk/">Факултетот за електротехника и информациски технологии</a>, на насока Телекомуникации и информациско инженерство. Родена сум во Скопје на 12.01.2000 година,
+        а живеам во Лозово. Основно училиште завршив во ООУ "Методи Митевски Брицо" во Лозово, додека средно во ПСУ "Јахја Кемал" во Скопје. Јас сум поранешен натпреварувач по математика, неколкугодишен член на македонската репрезентација за <a href="https://www.imo-official.org/">Интернационалната</a>,
+        <a href="https://www.egmo.org/">Европската</a> и <a href="http://www.massee-org.eu/index.php/mathematical/bmo">Балканската</a> математичка олимпијада и медалист. Подолу поделени во категории се дадени моите омилени серии, книги, филмови и музика.
+    </p>
+</section>
+
+<h1>
+    Омилена музика
+</h1>
+<section>
+    <div class="music">
+        <a target="_blank" href="https://open.spotify.com/playlist/2IovlpV3BfzcL31T6cGc2D">
+            <img src="img/mkd.png" alt="A" width="600" height="400">
+        </a>
+        <div class="desc">Duper, Funk Shui and more</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://open.spotify.com/playlist/3zsZ0rmX9TGXR7pPJ7FijN">
+            <img src="img/spotify1.png" alt="B" width="600" height="400">
+        </a>
+        <div class="desc">Tame Impala and more</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1">
+            <img src="img/blurryface.png" alt="C" width="600" height="400">
+        </a>
+        <div class="desc">Twenty One Pilots</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://open.spotify.com/playlist/3FYyzN4YwUxChZ06ilcICK">
+            <img src="img/osc.png" alt="D" width="600" height="400">
+        </a>
+        <div class="desc">80s Greatest Hits</div>
+    </div>
+    <div class="music">
+        <a target="_blank" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0FdJh6">
+            <img src="img/saintmotel.png" alt="E" width="600" height="400">
+        </a>
+        <div class="desc">This is Saint Motel</div>
+    </div>
+</section>
+<h1>
+    Омилени филмови
+</h1>
+<section>
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt0112697/?ref_=nv_sr_srsg_0">
+            <img src="img/clueless.jpg" alt="A" width="600" height="400">
+        </a>
+        <div class="desc">Clueless <br> (1995)</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt2084970/?ref_=nv_sr_srsg_0">
+            <img src="img/imitation_game.jpg" alt="B" width="600" height="400">
+        </a>
+        <div class="desc">The Imitation Game (2014)</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt1022603/?ref_=nv_sr_srsg_0">
+            <img src="img/500summer.jpg" alt="C" width="600" height="400">
+        </a>
+        <div class="desc">500 Days of Summer (2009)</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt1375666/?ref_=fn_al_tt_1">
+            <img src="img/inception.jpg" alt="D" width="600" height="400">
+        </a>
+        <div class="desc">Inception (2010)</div>
+    </div>
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt2884206/?ref_=nv_sr_srsg_0">
+            <img src="img/i_origins.jpg" alt="E" width="600" height="400">
+        </a>
+        <div class="desc">I Origins (2014)</div>
+    </div>
+</section>
+<h1>
+    Омилени серии
+</h1>
+<section>
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt2085059/?ref_=tt_mv_close">
+            <img src="img/blackmirror.png" alt="A" width="600" height="400">
+        </a>
+        <div class="desc">Black Mirror <br> (2011 - )</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt0460649/?ref_=nv_sr_srsg_0">
+            <img src="img/himym.png" alt="B" width="600" height="400">
+        </a>
+        <div class="desc">How I Met Your Mother</div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt7335184/?ref_=nv_sr_srsg_1">
+            <img src="img/you.png" alt="C" width="600" height="400">
+        </a>
+        <div class="desc">You <br> (2018 - )
+        </div>
+    </div>
+
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt3205802/?ref_=nv_sr_srsg_0">
+            <img src="img/htgawm.png" alt="D" width="600" height="400">
+        </a>
+        <div class="desc">How To Get Away With Murder</div>
+    </div>
+    <div class="music">
+        <a target="_blank" href="https://www.imdb.com/title/tt6257970/?ref_=nv_sr_srsg_0">
+            <img src="img/teofw.png" alt="E" height="400" width="600">
+        </a>
+        <div class="desc">The End Of The F***ing World <br> </div>
+    </div>
+</section>
+<h1>Омилени книги</h1>
+<section>
+    <div class="music">
+        <img src="img/inferno.jpg" alt="A" width="600" height="400">
+        <div class="desc">Inferno <br>..</div>
+    </div>
+
+    <div class="music">
+        <img src="img/thg.jpg" alt="B" width="600" height="400">
+        <div class="desc">The Hunger Games</div>
+    </div>
+
+    <div class="music">
+        <img src="img/angels.jpg" alt="C" width="600" height="400">
+        <div class="desc">Angels and Demons </div>
+    </div>
+
+    <div class="music">
+        <img src="img/gonegirl.jpg" alt="D" width="600" height="400">
+        <div class="desc">Gone <br> Girl</div>
+    </div>
+    <div class="music">
+        <img src="img/digital.jpg" alt="E" height="400" width="600">
+        <div class="desc">Digital Fortress </div>
+    </div>
+</section>
+<h1>Моја верзија на I'm feeling lucky</h1>
+<section>
+    <p style="text-align: center;">Кликнете на копчето и ќе ви се прикаже содржина по случаен избор. </p>
+    <button id="button1" onclick="randomSlika(sliki, 'img/')"> Кликни ме</button>
+    <p>
+        <div id="result1"><img width="400" src="img/misterija.png" alt="mystery" style="border-radius: 50px;"></div>
+    </p>
+</section>
+
 </html>

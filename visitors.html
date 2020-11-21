@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Анкета</title>
-        <link rel="stylesheet" type="text/css" href="visitors_styles.css">
-        <link rel="stylesheet" type="text/css" href="home_styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="text/javascript">
-            var i = 0;
-            var txt = 'Анкета за посетители';
-            var speed = 150; 
-            function typeWriter() {
-                if (i < txt.length) {
-                    document.getElementById("tuka").innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } 
+
+<head>
+    <meta charset="utf-8">
+    <title>Анкета</title>
+    <link rel="stylesheet" type="text/css" href="visitors_styles.css">
+    <link rel="stylesheet" type="text/css" href="home_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        var i = 0;
+        var txt = 'Анкета за посетители';
+        var speed = 150;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("tuka").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
             }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="home.html">Дома</a></li>
+        <li><a href="about_me.html">За мене</a></li>
+        <li><a href="gallery.html">Галерија</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li class="active"><a href="visitors.html">Анкета за посетители</a></li>
+        <li><a href="contactform.html">Контакт</a></li>
+        <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a>
+        </li>
+        <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
+        <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+    <div class="header">
+        <h2 id="tuka"></h2>
+        <script>
+            typeWriter();
         </script>
-    </head>
-    <body>
-        <ul>
-            <li><a href="home.html">Дома</a></li>
-            <li><a href="about_me.html">За мене</a></li>
-            <li><a href="gallery.html">Галерија</a></li>
-            <li><a href="blog.html">Блог</a></li>
-            <li class="active"><a href="visitors.html">Анкета за посетители</a></li>
-            <li><a href="contactform.html">Контакт</a></li>
-            <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a></li>
-            <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
-            <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
-        </ul>           
-        <div class="header">
-            <h2 id="tuka"><script>typeWriter();</script></h2>
-        </div>
-        <section id="1">
+    </div>
+    <section id="1">
         <p>
-            Почекајте! Пред да си заминете, одвојте 5 минути да ми кажете за Вашите впечатоци од мојата WEB страна.
-            Бидете искрени! Секоја конструктивна критика е добредојдена!
+            Почекајте! Пред да си заминете, одвојте 5 минути да ми кажете за Вашите впечатоци од мојата WEB страна. Бидете искрени! Секоја конструктивна критика е добредојдена!
         </p>
         <form method="POST">
-            <label >Име:</label> <br>
+            <label>Име:</label> <br>
             <input type="text">
             <label>Презиме:</label> <br>
             <input type="text">
             <label>Email адреса:</label> <br>
-            <input type="text">        
+            <input type="text">
             <label>Пол:</label> <br>
             <select>
                 <option value="M">Машки</option>
@@ -53,12 +59,12 @@
                 <option value="N">Друго</option>
             </select>
             <label>Коментар:</label> <br>
-            <textarea placeholder="Напишете го вашиот коментар овде.."> 
+            <textarea placeholder="Напишете го вашиот коментар овде..">
             </textarea>
             <input type="submit">
-            <input type="reset"> 
-        </section>
-        
-    </body>
-    
+            <input type="reset">
+    </section>
+
+</body>
+
 </html>

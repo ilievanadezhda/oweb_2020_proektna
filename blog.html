@@ -1,127 +1,174 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Блог</title>
-        <link rel="stylesheet" type="text/css" href="blog_styles.css">
-        <link rel="stylesheet" type="text/css" href="home_styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="text/javascript">
-            function postiraj() {
-                var naslov = document.getElementById("myTitle").value;
-                var tekst = document.getElementById("myText").value;
-                var d = new Date()
-                d.getDate();
-                var komanda = '<div class="card"> <h2>'+naslov+'</h2> <h5>'+d+'</h5> <p>'+tekst+'</p> </div>';
-                var momentalno = document.getElementById("postirano").innerHTML;
-                document.getElementById("postirano").innerHTML = komanda + momentalno;
-            }
-            var i = 0;
-            var txt = 'Мој блог';
-            var speed = 150; 
-            function typeWriter() {
-                if (i < txt.length) {
-                    document.getElementById("tuka").innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } 
-            }
-            var countDownDate = new Date("Nov 28, 2020 09:00:00").getTime();
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("counter").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        </script>
-    </head>
-    <body>
-        <ul>
-            <li><a href="home.html">Дома</a></li>
-            <li><a href="about_me.html">За мене</a></li>
-            <li><a href="gallery.html">Галерија</a></li>
-            <li class="active"><a href="blog.html">Блог</a></li>
-            <li><a href="visitors.html">Анкета за посетители</a></li>
-            <li><a href="contactform.html">Контакт</a></li>
-            <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a></li>
-            <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
-            <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-        <div class="header">
-            <h2 id="tuka"><script>typeWriter();</script></h2>
-        </div>
-        <section>
-                <div class="card">
-                    <h2>Сега и Вие може да додавате содржини на мојот блог! Напиши нешто: </h2>
-                    <form>
-                        <p>
-                            <textarea id="myTitle" style="width: 100%; height: 42px">Мојот наслов</textarea>
-                        </p>
-                        <textarea id="myText">Ова е мојот прв пост на страницата на Надежда! </textarea>
-                    </form>
-                    <p style="text-align: center;"><button onclick="postiraj()">Испрати</button></p>
-                </div>
-                <div id="postirano"></div>
-                <div class ="card">
-                    <h2>Време до првиот колоквиум по WEB програмирање</h2>
-                    <div class="fakeimg" id = "counter" style="font-size: 60pt; text-align: center;"> </div>
-                    <p style = "text-align: center;">Yikes, I am in trouble...</p>
-                </div>
-                <div class="card">
-                    <h2>The Price for Not Wearing Masks: Perhaps 130,000 Lives</h2>
-                    <h5>By Apoorva Mandavilli, Oct 23, 2020</h5>
-                    <div class="fakeimg" style="height:300px; background-image: url(img/mask.jpg);">
-                    </div>
-                    <p> Universal mask use could prevent nearly 130,000 deaths from Covid-19, the illness caused by the coronavirus, in the United States through next spring, scientists reported on Friday.
-                        The findings follow an assertion by Dr. Scott W. Atlas, the president’s science adviser, that masks are ineffective, in a tweet later taken down by Twitter for spreading misinformation. On Wednesday, 
-                        the Centers for Disease Control and Prevention released new guidance recommending mask use in public settings, including public transportation. <br>
-                        <a style="color: black;"href="https://www.nytimes.com/2020/10/23/health/covid-deaths.html">read more</a>
-                    </p>
-                </div>
-                <div class="card">
-                    <h2>Emily in Paris: Netflix hit's creator Darren Star 'not sorry' for 'clichés'</h2>
-                    <h5>Oct 23, 2020</h5>
-                    <div class="fakeimg" style="background-position:center; height:300px; background-image: url(img/emily1.jpg);"></div>
-                    <p>
-                        The creator of hit Netflix show Emily in Paris has defended the programme following criticism that its view of the city is idealised and clichéd
-                        US writer and executive producer Darren Star said he was "not sorry for looking at Paris through a glamorous lens".
-                        The show follows a young American, played by Lily Collins, who travels to the French capital for work.It has been criticised, particularly in France, for promoting stereotypical images of the city and its residents.
-                        "No cliché is spared, not even the most desperate," wrote Premiere's Charles Martin in his French-language review when the show made its debut earlier this month.<br>
-                        <a style="color: black;"href="https://www.bbc.com/news/entertainment-arts-54659567">read more</a>
-                    </p>
-                </div>                
-                <div class="card">
-                    <h2>Osiris-Rex: Nasa asteroid mission confident of success</h2>
-                    <h5>By Jonathan Amos, BBC Science Correspondent, Oct 22, 2020</h5>
-                    <div class="fakeimg" style="height:300px; background-image: url(img/nasa.jpg);">
-                    </div>
-                    <p>"We really did kind of make a mess."
-                        That was Dante Lauretta's take after reviewing the first pictures to come down from Nasa's Osiris-Rex probe following its bid to grab a sample from asteroid Bennu on Tuesday.
-                        Dust and grit flew in all directions but that was good news, enthused the University of Arizona professor. <br>
-                        <a style="color: black;"href="https://www.bbc.com/news/science-environment-54640475">read more</a>
-                    </p>
-                </div>
-                <div class="card">
-                    <h2>More pollution expected from stay-home workers</h2>
-                    <h5>By Roger Harrabin, BBC environment analyst, Oct 22, 2020</h5>
-                    <div class="fakeimg" style="background-position: center; height:300px; background-image: url(img/pollution.jpg);"></div>
-                    <p>
-                        Air pollution in big cities could increase because so many people are working from home, a report says.
-                        Gas burning from boilers is a major source of local pollution, accounting for 21% of total NOx emissions across Greater London, for instance. 
-                        Computer modelling predicts that boiler use will rise by 56% this winter due to coronavirus changing work patterns.
-                        The report assumes that workers’ offices will continue to be heated for staff still needed in the workplace. <br>
-                        <a style="color: black;"href="https://www.bbc.com/news/business-54634166">read more</a>
-                    </p>
-                </div>
 
-        </section>   
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Блог</title>
+    <link rel="stylesheet" type="text/css" href="blog_styles.css">
+    <link rel="stylesheet" type="text/css" href="home_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        function postiraj() {
+            var naslov = document.getElementById("myTitle").value;
+            var tekst = document.getElementById("myText").value;
+            var d = new Date()
+            d.getDate();
+            var komanda = '<div class="card"> <h2>' + naslov + '</h2> <h5>' + d + '</h5> <p>' + tekst + '</p> </div>';
+            var momentalno = document.getElementById("postirano").innerHTML;
+            document.getElementById("postirano").innerHTML = komanda + momentalno;
+        }
+        var i = 0;
+        var txt = 'Мој блог';
+        var speed = 150;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("tuka").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        var countDownDate = new Date("Nov 28, 2020 09:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("counter").innerHTML = days + "d " + hours + "h " +
+                minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="home.html">Дома</a></li>
+        <li><a href="about_me.html">За мене</a></li>
+        <li><a href="gallery.html">Галерија</a></li>
+        <li class="active"><a href="blog.html">Блог</a></li>
+        <li><a href="visitors.html">Анкета за посетители</a></li>
+        <li><a href="contactform.html">Контакт</a></li>
+        <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a>
+        </li>
+        <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
+        <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i
+                    class="fa fa-linkedin"></i></a></li>
+    </ul>
+    <div class="header">
+        <h2 id="tuka"></h2>
+        <script>
+            typeWriter();
+        </script>
+    </div>
+    <div class="leftColumn">
+        <div class="card">
+            <h2>Сега и Вие може да додавате содржини на мојот блог! Напиши нешто: </h2>
+            <form>
+                <p>
+                    <textarea id="myTitle" style="width: 100%; height: 42px">Мојот наслов</textarea>
+                </p>
+                <textarea id="myText">Ова е мојот прв пост на страницата на Надежда! </textarea>
+            </form>
+            <p style="text-align: center;"><button onclick="postiraj()">Испрати</button></p>
+        </div>
+        <div id="postirano"></div>
+        <div class="card">
+            <h2>Време до првиот колоквиум по WEB програмирање</h2>
+            <div class="fakeimg" id="counter" style="font-size: 60pt; text-align: center;"> </div>
+            <p style="text-align: center;">Yikes, I am in trouble...</p>
+        </div>
+        <div class="card">
+            <h2>The Price for Not Wearing Masks: Perhaps 130,000 Lives</h2>
+            <h5>By Apoorva Mandavilli, Oct 23, 2020</h5>
+            <div class="fakeimg" style="height:300px; background-image: url(img/mask.jpg);">
+            </div>
+            <p> Universal mask use could prevent nearly 130,000 deaths from Covid-19, the illness caused by the coronavirus, in the United States through next spring, scientists reported on Friday. The findings follow an assertion by Dr. Scott W. Atlas, the
+                president’s science adviser, that masks are ineffective, in a tweet later taken down by Twitter for spreading misinformation. On Wednesday, the Centers for Disease Control and Prevention released new guidance recommending mask use in public
+                settings, including public transportation. <br>
+                <a style="color: black;" href="https://www.nytimes.com/2020/10/23/health/covid-deaths.html">read
+                    more</a>
+            </p>
+        </div>
+        <div class="card">
+            <h2>Emily in Paris: Netflix hit's creator Darren Star 'not sorry' for 'clichés'</h2>
+            <h5>Oct 23, 2020</h5>
+            <div class="fakeimg" style="background-position:center; height:300px; background-image: url(img/emily1.jpg);"></div>
+            <p>
+                The creator of hit Netflix show Emily in Paris has defended the programme following criticism that its view of the city is idealised and clichéd US writer and executive producer Darren Star said he was "not sorry for looking at Paris through a glamorous
+                lens". The show follows a young American, played by Lily Collins, who travels to the French capital for work.It has been criticised, particularly in France, for promoting stereotypical images of the city and its residents. "No cliché is
+                spared, not even the most desperate," wrote Premiere's Charles Martin in his French-language review when the show made its debut earlier this month.<br>
+                <a style="color: black;" href="https://www.bbc.com/news/entertainment-arts-54659567">read more</a>
+            </p>
+        </div>
+        <div class="card">
+            <h2>Osiris-Rex: Nasa asteroid mission confident of success</h2>
+            <h5>By Jonathan Amos, BBC Science Correspondent, Oct 22, 2020</h5>
+            <div class="fakeimg" style="height:300px; background-image: url(img/nasa.jpg);">
+            </div>
+            <p>"We really did kind of make a mess." That was Dante Lauretta's take after reviewing the first pictures to come down from Nasa's Osiris-Rex probe following its bid to grab a sample from asteroid Bennu on Tuesday. Dust and grit flew in all directions
+                but that was good news, enthused the University of Arizona professor. <br>
+                <a style="color: black;" href="https://www.bbc.com/news/science-environment-54640475">read more</a>
+            </p>
+        </div>
+        <div class="card">
+            <h2>More pollution expected from stay-home workers</h2>
+            <h5>By Roger Harrabin, BBC environment analyst, Oct 22, 2020</h5>
+            <div class="fakeimg" style="background-position: center; height:300px; background-image: url(img/pollution.jpg);"></div>
+            <p>
+                Air pollution in big cities could increase because so many people are working from home, a report says. Gas burning from boilers is a major source of local pollution, accounting for 21% of total NOx emissions across Greater London, for instance. Computer
+                modelling predicts that boiler use will rise by 56% this winter due to coronavirus changing work patterns. The report assumes that workers’ offices will continue to be heated for staff still needed in the workplace. <br>
+                <a style="color: black;" href="https://www.bbc.com/news/business-54634166">read more</a>
+            </p>
+        </div>
+    </div>
+    <div class="rightColumn">
+        <div class="card">
+            <h2 style="text-align: center;">Quick links</h2>
+            <div style="text-align: center;">
+                <a href="https://feit.ukim.edu.mk/" target="_blank"><img src="img/feit.png" width="150"></a> <br>
+                <a href="https://www.bbc.com/news" target="_blank"><img src="img/bbc.jpg" width="150"></a> <br>
+                <a href="https://www.nytimes.com/" target="_blank"><img src="img/nyt.jpg" width="150"></a> <br>
+                <a href="https://edition.cnn.com/" target="_blank"><img src="img/cnn.png" width="150"></a> <br>
+                <a href="https://www.dw.com/en/top-stories/s-9097" target="_blank"><img src="img/dw.png" width="150"></a> <br>
+                <a href="https://www.theguardian.com/international" target="_blank"><img src="img/tg.png" width="150"></a> <br>
+
+                <a href="https://www.nationalgeographic.com/" target="_blank"><img src="img/ng.jpg" width="150"></a>
+            </div>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h2>Точно време</h2>
+            <iframe scrolling="no" frameborder="no" clocktype="html5" style="border-radius: 30pt; overflow:hidden; border:0; margin:0; padding:0; width:150px; height:150px;" src="https://www.clocklink.com/html5embed.php?clock=001&timezone=CET&color=gray&size=150&Title=&Message=&Target=&From=2020,1,1,0,0,0&Color=gray"></iframe>
+        </div>
+        <div class="card">
+            <h2 style="text-align: center;">Временска прогноза</h2>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/42d0021d43/skopje/" data-label_1="SKOPJE" data-label_2="WEATHER" data-font="Arimo" data-icons="Climacons Animated" data-theme="original">SKOPJE
+                WEATHER</a>
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = 'https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }
+                (document, 'script', 'weatherwidget-io-js');
+            </script>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h2>Локација</h2>
+            <iframe height="600" width="210" src="https://maps.google.com/maps?q=skopje&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="text-align: center;">
+            </iframe>
+            <a href="https://www.embedgooglemap.net/1/"></a>
+        </div>
+    </div>
+</body>
+
 </html>

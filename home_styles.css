@@ -1,15 +1,17 @@
 ul {
     list-style-type: none;
-    margin:0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#333;
+    background-color: #333;
     position: sticky;
     top: 0;
 }
+
 li {
     float: left;
 }
+
 li a {
     display: block;
     color: white;
@@ -19,15 +21,20 @@ li a {
     font-weight: 500;
     font-family: 'Courier New', Courier, monospace;
 }
+
 li a:hover {
     background-color: #111;
 }
-.active{
+
+.active {
     background-color: #a34caf;
 }
-body, html {
+
+body,
+html {
     height: 100%;
 }
+
 .Naslovna {
     background-image: url(img/cover1.jpg);
     height: 90%;
@@ -36,6 +43,7 @@ body, html {
     background-size: cover;
     position: relative;
 }
+
 .Tekst_na_naslovna {
     text-align: center;
     position: absolute;
@@ -45,12 +53,14 @@ body, html {
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
+
 body {
     background-color: #f1f1f1;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .buttonh {
-    background-color: white; 
+    background-color: white;
     border: none;
     color: #a34caf;
     padding: 15px 15px;
@@ -62,6 +72,7 @@ body {
     font-weight: 500;
     border-radius: 3px;
 }
+
 .buttonh:hover {
     background-color: #333;
 }
