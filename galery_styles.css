@@ -53,3 +53,13 @@ section {
     float: right;
     margin-right: 5%;
 }
+
+.commentsBox {
+    border: solid thin;
+    border-color: #a34caf;
+    padding: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    overflow-y: scroll;
+    height: 10px;
+}

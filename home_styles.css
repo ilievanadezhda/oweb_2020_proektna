@@ -52,6 +52,15 @@ html {
     transform: translate(-50%, -50%);
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    background-color: #a34caf;
+    padding: 50px;
+    opacity: 0.75;
+    border-radius: 55px;
+
+}
+
+.Tekst_na_naslovna:hover {
+    opacity: 1;
 }
 
 body {

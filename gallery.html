@@ -16,11 +16,14 @@
             identifikacija = "r" + clicked_id;
             document.getElementById(identifikacija).innerHTML = likes[clicked_id - 1];
         }
+        var ime;
         var komentar;
         var komentari = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
         function addComment(clicked_id) {
+            ime = window.prompt("Вашето име:");
             komentar = window.prompt("Напишете го вашиот коментар тука");
+            komentar = ime + ": " + komentar;
             identifikacija = "f" + (clicked_id - 100);
             document.getElementById(identifikacija).innerHTML += komentar + "<br>";
             identifikacija = "s" + (clicked_id - 100);
@@ -38,7 +41,7 @@
                 setTimeout(typeWriter, speed);
             }
         }
-        var loadFile = function(event) {
+        var loadFile = function (event) {
             var image = document.getElementById('output');
             image.src = URL.createObjectURL(event.target.files[0]);
         };
@@ -53,10 +56,11 @@
         <li><a href="blog.html">Блог</a></li>
         <li><a href="visitors.html">Анкета за посетители</a></li>
         <li><a href="contactform.html">Контакт</a></li>
-        <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a></li>
+        <li style="float: right;"><a href="http://www.instagram.com/nadjushenka_/"><i class="fa fa-instagram"></i></a>
+        </li>
         <li style="float: right;"><a href="https://www.github.com/ilievanadezhda"><i class="fa fa-github"></i></a></li>
         <li style="float: right;"><a href="https://www.linkedin.com/in/nadezhda-ilieva-93a9051b5/"><i
-          class="fa fa-linkedin"></i></a></li>
+                    class="fa fa-linkedin"></i></a></li>
     </ul>
     <div class="header">
         <h2 id="tuka"></h2>
@@ -64,7 +68,9 @@
             typeWriter();
         </script>
     </div>
-    <p style="font-size: larger; text-align: justify; margin-left: 100px; margin-right: 100px; margin-bottom: 40px;">Сите фотографии прикажани подолу се мои лични фотографии. Користена опрема: Nikon COOLPIX B500, Canon EOS 4000D и Samsung Galaxy A50. Уживајте!</p>
+    <p style="font-size: larger; text-align: justify; margin-left: 5%; margin-right: 5%; margin-bottom: 40px;">Сите
+        фотографии прикажани подолу се мои лични фотографии. Користена опрема: Nikon COOLPIX B500, Canon EOS 4000D и
+        Samsung Galaxy A50. Уживајте!</p>
     <div class="leftColumn">
         <div class="gallery">
             <a target="_blank" href="img/pchela.jpg">
@@ -72,14 +78,15 @@
             </a>
             <div class="desc">
                 <button id="1" onclick="countLikes(this.id)">
-          <div id="r1" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r1" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="101" onclick="addComment(this.id)" type="button">
-          <div id="s1" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s1" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f1"></p>
+                <div id="f1" class=commentsBox></div>
             </div>
+
         </div>
         <div class="gallery">
             <a target="_blank" href="img/shtipki.jpg" width="600" height="400">
@@ -87,13 +94,13 @@
             </a>
             <div class="desc">
                 <button id="2" onclick="countLikes(this.id)">
-          <div id="r2" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r2" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="102" onclick="addComment(this.id)" type="button">
-          <div id="s2" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s2" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f2"></p>
+                <div id="f2" class=commentsBox></div>
             </div>
         </div>
         <div class="gallery">
@@ -102,13 +109,13 @@
             </a>
             <div class="desc">
                 <button id="3" onclick="countLikes(this.id)">
-          <div id="r3" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r3" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="103" onclick="addComment(this.id)" type="button">
-          <div id="s3" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s3" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f3"></p>
+                <div id="f3" class=commentsBox></div>
             </div>
         </div>
         <div class="gallery">
@@ -117,31 +124,40 @@
             </a>
             <div class="desc">
                 <button id="8" onclick="countLikes(this.id)">
-          <div id="r8" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r8" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="108" onclick="addComment(this.id)" type="button">
-          <div id="s8" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s8" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f8"></p>
+                <div id="f8" class=commentsBox></div>
             </div>
         </div>
         <h1 style="text-align: center;">Додадете сликa</h1>
-        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
-        <div style="text-align: center; font-size: 30pt; color:  #a34caf;"><label for="file" style="cursor: pointer;"><i
-          class="fa fa-plus-square"></i></label></div>
+        <p>
+            <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
+                style="display: none;">
+        </p>
+        <div style="text-align: center; font-size: 30pt; color:  #a34caf;">
+            <label for="file" style="cursor: pointer;">
+                <i class="fa fa-plus-square"></i>
+            </label>
+        </div>
         <div class="gallery">
-            <p style="text-align: center;"><img id="output" width="600" height="400" /></p>
+            <p style="text-align: center;">
+                <img id="output">
+            </p>
+            <!--
             <div class="desc">
                 <button id="9" onclick="countLikes(this.id)">
-          <div id="r9" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r9" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="109" onclick="addComment(this.id)" type="button">
-          <div id="s9" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s9" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f9"></p>
-            </div>
+                <div id="f9" class=commentsBox></div>
+            </div> -->
         </div>
     </div>
     <div class="rightColumn">
@@ -151,13 +167,13 @@
             </a>
             <div class="desc">
                 <button id="4" onclick="countLikes(this.id)">
-          <div id="r4" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r4" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="104" onclick="addComment(this.id)" type="button">
-          <div id="s4" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s4" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f4"></p>
+                <div id="f4" class=commentsBox></div>
             </div>
         </div>
         <div class="gallery">
@@ -166,13 +182,13 @@
             </a>
             <div class="desc">
                 <button id="5" onclick="countLikes(this.id)">
-          <div id="r5" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r5" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="105" onclick="addComment(this.id)" type="button">
-          <div id="s5" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s5" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f5"></p>
+                <div id="f5" class=commentsBox></div>
             </div>
         </div>
         <div class="gallery">
@@ -181,13 +197,13 @@
             </a>
             <div class="desc">
                 <button id="6" onclick="countLikes(this.id)">
-          <div id="r6" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r6" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="106" onclick="addComment(this.id)" type="button">
-          <div id="s6" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s6" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f6"></p>
+                <div id="f6" class=commentsBox></div>
             </div>
         </div>
         <div class="gallery">
@@ -196,13 +212,13 @@
             </a>
             <div class="desc">
                 <button id="7" onclick="countLikes(this.id)">
-          <div id="r7" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
-        </button>
+                    <div id="r7" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                </button>
                 <button id="107" onclick="addComment(this.id)" type="button">
-          <div id="s7" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
-        </button>
+                    <div id="s7" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <p id="f7"></p>
+                <div id="f7" class=commentsBox></div>
             </div>
         </div>
     </div>

@@ -35,8 +35,8 @@ input[type=reset] {
 }
 
 section {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .header {
@@ -52,4 +52,14 @@ select {
     margin-top: 8px;
     margin-bottom: 8px;
     box-sizing: border-box;
+}
+.leftColumn {
+    float: left;
+    width: 70%;
+    margin-left: 5%;
+}
+.rightColumn {
+    float: right;
+    width: 18.5%;
+    margin-right: 5%;
 }
