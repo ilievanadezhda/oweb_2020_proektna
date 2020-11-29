@@ -2,7 +2,8 @@ p {
     font-size: larger;
 }
 
-input[type=text] {
+input[type=text],
+input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin-top: 8px;
@@ -24,14 +25,17 @@ input[type=reset] {
     background-color: #a34caf;
     border: none;
     color: white;
-    padding: 15px 15px;
+    padding: 20px 20px;
     text-decoration: none;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-left: 5px;
-    cursor: pointer;
+    margin-bottom: 10px;
     float: right;
+    cursor: pointer;
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-align: center;
 }
 
 section {
@@ -52,14 +56,4 @@ select {
     margin-top: 8px;
     margin-bottom: 8px;
     box-sizing: border-box;
-}
-.leftColumn {
-    float: left;
-    width: 70%;
-    margin-left: 5%;
-}
-.rightColumn {
-    float: right;
-    width: 18.5%;
-    margin-right: 5%;
 }

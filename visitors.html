@@ -20,8 +20,7 @@
             }
         }
     </script>
-
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src="antispam.js"></script>
 </head>
 
 <body>
@@ -51,25 +50,31 @@
         </p>
         <form method="POST">
             <label>Име:</label> <br>
-            <input type="text">
+            <input type="text" placeholder="Надежда">
             <label>Презиме:</label> <br>
-            <input type="text">
+            <input type="text" placeholder="Илиева">
             <label>Email адреса:</label> <br>
-            <input type="text">
+            <input type="email" placeholder="name@domain.com">
             <label>Пол:</label> <br>
             <select>
-                <option value="M">Машки</option>
                 <option value="Z">Женски</option>
+                <option value="M">Машки</option>
                 <option value="N">Друго</option>
             </select>
             <label>Коментар:</label> <br>
             <textarea placeholder="Напишете го вашиот коментар овде..">
             </textarea>
-            <!--<div class="g-recaptcha" data-sitekey="6Lftm-gZAAAAALcbUqoh6XA-SCbtiN2npK7Oz2rr"></div>-->
-            <input type="submit">
+            <p>Ве молиме да одговорите на следново сигурносно прашање. Внимавајте, доколку погрешите ќе мора да ги
+                внесете сите податоци од почеток!</p>
+            <div style="text-align: center; border: solid #a34caf thin; padding: 30px; border-radius: 30px;">
+                <label id="suma" style="font-size: larger; color: #a34caf">
+                    <script>var broj = generate();</script></label>
+                <input type="text" id="result" style="width: 5%;">
+            </div>
+            <input type="submit" onclick="antiSpam(broj)">
             <input type="reset">
-        </section>
-
+        </form>
+    </section>
 </body>
 
 </html>
