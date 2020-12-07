@@ -43,38 +43,75 @@
             typeWriter();
         </script>
     </div>
-    <section id="1">
-        <p>
-            Почекајте! Пред да си заминете, одвојте 5 минути да ми кажете за Вашите впечатоци од мојата WEB страна.
-            Бидете искрени! Секоја конструктивна критика е добредојдена!
-        </p>
-        <form method="POST">
-            <label>Име:</label> <br>
-            <input type="text" placeholder="Надежда">
-            <label>Презиме:</label> <br>
-            <input type="text" placeholder="Илиева">
-            <label>Email адреса:</label> <br>
-            <input type="email" placeholder="name@domain.com">
-            <label>Пол:</label> <br>
-            <select>
-                <option value="Z">Женски</option>
-                <option value="M">Машки</option>
-                <option value="N">Друго</option>
-            </select>
-            <label>Коментар:</label> <br>
-            <textarea placeholder="Напишете го вашиот коментар овде..">
+    <div class="leftColumn">
+        <div class="card">
+            <p>
+                Почекајте! Пред да си заминете, одвојте 5 минути да ми кажете за Вашите впечатоци од мојата WEB страна.
+                Бидете искрени! Секоја конструктивна критика е добредојдена!
+            </p>
+        </div>
+        <div class="card">
+
+            <form method="POST">
+                <label>Име:</label> <br>
+                <input type="text" placeholder="Надежда">
+                <label>Презиме:</label> <br>
+                <input type="text" placeholder="Илиева">
+                <label>Email адреса:</label> <br>
+                <input type="email" placeholder="name@domain.com">
+                <label>Возраст: </label>
+                <input type="number" placeholder="20"> <br>
+                <label>Пол:</label> <br>
+                <select>
+                    <option value="Z">Женски</option>
+                    <option value="M">Машки</option>
+                    <option value="N">Друго</option>
+                </select>
+                <label>Како дознавте за мојата WEB страница?</label>
+                <select>
+                    <option>Друго</option>
+                    <option>Facebook</option>
+                    <option>Instagram</option>
+                    <option>Twitter</option>
+                    <option>Google</option>
+                    <option>Преку пријател</option>
+                </select>
+                <label>Коментар:</label> <br>
+                <textarea placeholder="Напишете го вашиот коментар овде..">
             </textarea>
-            <p>Ве молиме да одговорите на следново сигурносно прашање. Внимавајте, доколку погрешите ќе мора да ги
-                внесете сите податоци од почеток!</p>
-            <div style="text-align: center; border: solid #a34caf thin; padding: 30px; border-radius: 30px;">
-                <label id="suma" style="font-size: larger; color: #a34caf">
-                    <script>var broj = generate();</script></label>
-                <input type="text" id="result" style="width: 5%;">
-            </div>
-            <input type="submit" onclick="antiSpam(broj)">
-            <input type="reset">
+                <p>Ве молиме да одговорите на следново сигурносно прашање. Внимавајте, доколку погрешите ќе мора да ги
+                    внесете сите податоци од почеток!</p>
+                <div style="text-align: center; border: solid #a34caf thin; padding: 30px; border-radius: 30px;">
+                    <label id="suma" style="font-size: larger; color: #a34caf">
+                        <script>var broj = generate();</script></label>
+                    <input type="text" id="result" style="width: 5%;">
+                </div>
+        </div>
+        <input type="submit" onclick="antiSpam(broj)">
+        <input type="reset">
         </form>
-    </section>
+
+    </div>
+    <div class="rightColumn">
+        <div class="card" style="text-align: center;">
+            <h2>Lichess TV</h2>
+            <iframe src="https://lichess.org/tv/frame?theme=blue&bg=light" style="width: 290px; height: 344px;"
+                allowtransparency="true" frameborder="0"></iframe>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h2>Improve Your Chess Tactics</h2>
+            <div id="csoDpCon" style="text-align: center;"></div>
+            <script type="text/javascript" src="chess.js"></script>
+            <script type="text/javascript">
+                csoDailyPuzzle({
+                    boardStyle: "default",
+                    pieceStyle: "wikipedia",
+                    showCoordinates: true,
+                    width: 100
+                });
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>
