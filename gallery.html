@@ -7,27 +7,59 @@
     <link rel="stylesheet" type="text/css" href="galery_styles.css">
     <link rel="stylesheet" type="text/css" href="home_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
+    <script type="text/javascript">
+
         var identifikacija;
-        var likes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-        function countLikes(clicked_id) {
-            likes[clicked_id - 1]++;
-            identifikacija = "r" + clicked_id;
-            document.getElementById(identifikacija).innerHTML = likes[clicked_id - 1];
+        var i;
+        var likes;
+
+        function getSavedValue(v) {
+            if (!localStorage.getItem(v)) {
+                localStorage.setItem(v, 0);
+                return 0;
+            }
+            return localStorage.getItem(v);
         }
+
+        function getSavedValueComments(v) {
+            if (!localStorage.getItem(v)) {
+                localStorage.setItem(v, "");
+                return "";
+            }
+            return localStorage.getItem(v);
+        }
+
+        function countLikes(clicked_id) {
+            identifikacija = "r" + clicked_id;
+            likes = parseInt(localStorage.getItem(identifikacija)) + 1;
+            document.getElementById(identifikacija).innerHTML = likes;
+            localStorage.setItem(identifikacija, likes);
+        }
+
         var ime;
         var komentar;
-        var komentari = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var savedkomentar;
+        var komentari;
+        var id;
 
         function addComment(clicked_id) {
+
             ime = window.prompt("Вашето име:");
             komentar = window.prompt("Напишете го вашиот коментар тука");
             komentar = ime + ": " + komentar;
+
             identifikacija = "f" + (clicked_id - 100);
-            document.getElementById(identifikacija).innerHTML += komentar + "<br>";
+            savedkomentar = getSavedValueComments(identifikacija);
+            document.getElementById(identifikacija).innerHTML = savedkomentar + komentar + "<br>";
+
+            savedkomentar = savedkomentar + komentar + "<br>"
+            localStorage.setItem(identifikacija, savedkomentar)
+
             identifikacija = "s" + (clicked_id - 100);
-            komentari[clicked_id - 101]++;
-            document.getElementById(identifikacija).innerHTML = komentari[clicked_id - 101];
+            komentari = parseInt(localStorage.getItem(identifikacija)) + 1;
+            document.getElementById(identifikacija).innerHTML = komentari;
+            localStorage.setItem(identifikacija, komentari);
+
         }
         var i = 0;
         var txt = 'Галерија';
@@ -77,13 +109,20 @@
             </a>
             <div class="desc">
                 <button id="1" onclick="countLikes(this.id)">
-                    <div id="r1" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r1" style="display: inline-block;">
+                        <script>document.getElementById("r1").innerHTML = getSavedValue("r1");</script>
+                    </div> <i class="fa fa-heart"></i>
+                    <!--Знам дека личи глупаво со inline script за onload ама не сакаше на ниту еден друг можен начин..-->
                 </button>
                 <button id="101" onclick="addComment(this.id)" type="button">
-                    <div id="s1" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s1" style="display: inline-block;">
+                        <script>document.getElementById("s1").innerHTML = getSavedValue("s1");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f1" class=commentsBox></div>
+                <div id="f1" class="commentsBox">
+                    <script>document.getElementById("f1").innerHTML = getSavedValueComments("f1");</script>
+                </div>
             </div>
 
         </div>
@@ -93,13 +132,19 @@
             </a>
             <div class="desc">
                 <button id="2" onclick="countLikes(this.id)">
-                    <div id="r2" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r2" style="display: inline-block;">
+                        <script>document.getElementById("r2").innerHTML = getSavedValue("r2");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="102" onclick="addComment(this.id)" type="button">
-                    <div id="s2" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s2" style="display: inline-block;">
+                        <script>document.getElementById("s2").innerHTML = getSavedValue("s2");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f2" class=commentsBox></div>
+                <div id="f2" class="commentsBox">
+                    <script>document.getElementById("f2").innerHTML = getSavedValueComments("f2");</script>
+                </div>
             </div>
         </div>
         <div class="gallery">
@@ -108,13 +153,19 @@
             </a>
             <div class="desc">
                 <button id="3" onclick="countLikes(this.id)">
-                    <div id="r3" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r3" style="display: inline-block;">
+                        <script>document.getElementById("r3").innerHTML = getSavedValue("r3");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="103" onclick="addComment(this.id)" type="button">
-                    <div id="s3" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s3" style="display: inline-block;">
+                        <script>document.getElementById("s3").innerHTML = getSavedValue("s3");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f3" class=commentsBox></div>
+                <div id="f3" class="commentsBox">
+                    <script>document.getElementById("f3").innerHTML = getSavedValueComments("f3");</script>
+                </div>
             </div>
         </div>
         <div class="gallery">
@@ -123,13 +174,19 @@
             </a>
             <div class="desc">
                 <button id="8" onclick="countLikes(this.id)">
-                    <div id="r8" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r8" style="display: inline-block;">
+                        <script>document.getElementById("r8").innerHTML = getSavedValue("r8");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="108" onclick="addComment(this.id)" type="button">
-                    <div id="s8" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s8" style="display: inline-block;">
+                        <script>document.getElementById("s8").innerHTML = getSavedValue("s8");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f8" class=commentsBox></div>
+                <div id="f8" class="commentsBox">
+                    <script>document.getElementById("f8").innerHTML = getSavedValueComments("f8");</script>
+                </div>
             </div>
         </div>
         <h1 style="text-align: center;">Додадете сликa</h1>
@@ -166,13 +223,19 @@
             </a>
             <div class="desc">
                 <button id="4" onclick="countLikes(this.id)">
-                    <div id="r4" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r4" style="display: inline-block;">
+                        <script>document.getElementById("r4").innerHTML = getSavedValue("r4");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="104" onclick="addComment(this.id)" type="button">
-                    <div id="s4" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s4" style="display: inline-block;">
+                        <script>document.getElementById("s4").innerHTML = getSavedValue("s4");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f4" class=commentsBox></div>
+                <div id="f4" class="commentsBox">
+                    <script>document.getElementById("f4").innerHTML = getSavedValueComments("f4");</script>
+                </div>
             </div>
         </div>
         <div class="gallery">
@@ -181,13 +244,19 @@
             </a>
             <div class="desc">
                 <button id="5" onclick="countLikes(this.id)">
-                    <div id="r5" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r5" style="display: inline-block;">
+                        <script>document.getElementById("r5").innerHTML = getSavedValue("r5");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="105" onclick="addComment(this.id)" type="button">
-                    <div id="s5" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s5" style="display: inline-block;">
+                        <script>document.getElementById("s5").innerHTML = getSavedValue("s5");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f5" class=commentsBox></div>
+                <div id="f5" class="commentsBox">
+                    <script>document.getElementById("f5").innerHTML = getSavedValueComments("f5");</script>
+                </div>
             </div>
         </div>
         <div class="gallery">
@@ -196,13 +265,19 @@
             </a>
             <div class="desc">
                 <button id="6" onclick="countLikes(this.id)">
-                    <div id="r6" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r6" style="display: inline-block;">
+                        <script>document.getElementById("r6").innerHTML = getSavedValue("r6");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="106" onclick="addComment(this.id)" type="button">
-                    <div id="s6" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s6" style="display: inline-block;">
+                        <script>document.getElementById("s6").innerHTML = getSavedValue("s6");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f6" class=commentsBox></div>
+                <div id="f6" class="commentsBox">
+                    <script>document.getElementById("f6").innerHTML = getSavedValueComments("f6");</script>
+                </div>
             </div>
         </div>
         <div class="gallery">
@@ -211,13 +286,19 @@
             </a>
             <div class="desc">
                 <button id="7" onclick="countLikes(this.id)">
-                    <div id="r7" style="display: inline-block;">0</div> <i class="fa fa-heart"></i>
+                    <div id="r7" style="display: inline-block;">
+                        <script>document.getElementById("r7").innerHTML = getSavedValue("r7");</script>
+                    </div> <i class="fa fa-heart"></i>
                 </button>
                 <button id="107" onclick="addComment(this.id)" type="button">
-                    <div id="s7" style="display: inline-block;">0</div> <i class="fa fa-comment"></i>
+                    <div id="s7" style="display: inline-block;">
+                        <script>document.getElementById("s7").innerHTML = getSavedValue("s7");</script>
+                    </div> <i class="fa fa-comment"></i>
                 </button>
                 <button><i class="fa fa-share-alt"></i></button>
-                <div id="f7" class=commentsBox></div>
+                <div id="f7" class="commentsBox">
+                    <script>document.getElementById("f7").innerHTML = getSavedValueComments("f7");</script>
+                </div>
             </div>
         </div>
     </div>
